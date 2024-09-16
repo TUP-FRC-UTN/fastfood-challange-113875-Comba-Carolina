@@ -1,0 +1,16 @@
+<h3>Componente Cocina</h3>
+<p>Pendiente de cocinar</p>
+<ul>
+    @for (pedido of pedidosPendientes; track $index) {
+    <li>({{pedido.number}}) - {{pedido.description}}<button class="btn btn-warning m-3"
+            (click)="cocinarPedido(pedido)">Cocinar</button></li>
+    }
+</ul>
+
+<p>Pedidos en Cocción</p>
+<ul>
+    @for (pedido of pedidosEnCoccion; track $index) {
+    <li>({{pedido.number}}) - {{pedido.description}}<button class="btn btn-warning m-3"
+        (click)="terminarCoccion(pedido)">Terminado</button></li> 
+    }
+</ul>

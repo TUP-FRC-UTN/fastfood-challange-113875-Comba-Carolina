@@ -1,0 +1,10 @@
+<div class="m-3">
+    <h1>Restaurante FastFood</h1>
+    <p>Pedidos Ingresados</p>
+    @for (pedido of pedidosIngresados; track $index) {
+    <p class="mb-3">{{pedido | json}}</p>
+    }
+    <app-delivery class="p-5" [pedidos]="pedidosParaEntregar"></app-delivery>
+    <app-pos (enviarPedidoEmitter)="recibirPedido($event)"></app-pos>
+    <app-cocina [pedidosPendientes]="pedidosPendientes" (terminarCoccionEmitter)="entregarPedido($event)"></app-cocina>
+</div>

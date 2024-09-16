@@ -1,0 +1,9 @@
+<h3>Componente Delivery</h3>
+<p>Pedidos Listos Para Entregar</p>
+
+<ul>
+    @for (item of pedidos; track $index) {
+    <li class="m-3">{{item.number}} - {{item.description}} <button class="btn btn-warning"
+            (click)="entregar($index)">¡Entregar!</button></li>
+    }
+</ul>
